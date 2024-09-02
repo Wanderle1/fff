@@ -17,7 +17,10 @@ const atualizarBaralho = require('./baralho/atualizarBaralho')
 app.put('/baralhos/:ID', atualizarBaralho)
 
 const deletarBaralho = require('./baralho/deletarBaralho')
-app.delete('./baralhos/:ID', deletarBaralho)
+app.delete('/baralhos/:ID', deletarBaralho)
+
+const criarflashcards = require('./flashcards/criarflashcards')
+app.post('/flashcards/:ID', criarflashcards)
 
 app.listen(port, () =>{
     console.log(`iniciado em  http://localhost:${port}`)
