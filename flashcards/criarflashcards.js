@@ -21,7 +21,6 @@ function criarflashcards(requi, resp){
     }else{
         const { ID } = requi.params
         const baralho = baralhos.find(b => b.ID === Number(ID))
-        console.log({ID})
 
         if (!baralho) {
             return resp.status(404).send('Baralho não encontrado!')
