@@ -1,8 +1,8 @@
 const {flashcards} = require('./data');
 
 function listarPorPergunta(req, res){
-    const { termo } = req.query
-    
+    let { termo } = req.query
+
     const flashcard = flashcards.filter(flashcard => flashcard.pergunta.toLowerCase().includes(termo.toLowerCase()))
 
     if(flashcard.length === 0){

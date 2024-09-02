@@ -35,10 +35,10 @@ const listarPorBaralho = require('./listarPorBaralho')
 app.get('/flashcards/baralhos/:IDbar', listarPorBaralho)
 
 const listarPorID = require('./listarFlashcardsPorID')
-app.get('/flashcards/:ID', listarPorID)
+app.get('/flashcards/id/:ID', listarPorID)
 
 const listarPorPergunta = require('./listarPorPergunta')
-app.get('/flashcards', listarPorPergunta)
+app.get('/flashcards/pergunta', listarPorPergunta)
 
 app.listen(port, () =>{
     console.log(`iniciado em  http://localhost:${port}`)
