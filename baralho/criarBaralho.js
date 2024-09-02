@@ -1,11 +1,16 @@
 let {baralhos}= require('../data')
 
 function criarBaralho(requi, resp){
+    const {titulo}= requi.body
+    if(!titulo){
+        return resp.status(404).send('titulo obrigatorio!')
+    }
+    
     let id=1
     while(baralhos.some(b => b.ID === id)){
         id++
     }
-    let newBaralho= {ID: id, titulo: requi.body.titulo}
+    let newBaralho= {ID: id, titulo: titulo}
     baralhos.push(newBaralho)
 
 
